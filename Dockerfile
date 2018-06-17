@@ -1,7 +1,7 @@
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /app
 COPY . /app
-RUN mvn install
+RUN mvn install -Dmaven.test.skip=true
 
 FROM maven:3.5-jdk-8-alpine
 WORKDIR /app
